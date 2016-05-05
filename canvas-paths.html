@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>My Canvas App</title>
+    </head>
+    <body>
+        <canvas id="c" width="200" height="200"></canvas>
+        <script>
+            var c = document.querySelector("#c");
+            var ctx = c.getContext("2d");
+
+
+            /*
+             * Draw rectangle.
+             */
+            //Resets the current path.
+            ctx.beginPath();
+            //Creates a new subpath with the given point.
+            ctx.moveTo(50, 50);
+            //Adds the given point to the current subpath, connected to the previous one by a straight line.
+            ctx.lineTo(150, 50);
+            ctx.lineTo(150, 150);
+            ctx.lineTo(50, 150);
+            ctx.lineTo(50, 50);
+            //Strokes the subpaths of the current path or the given path with the current stroke style.
+            ctx.stroke();
+
+            /*
+             * Draw triangle inside the rectangle.
+             */
+            //Resets the current path.
+            ctx.beginPath();
+            //Creates a new subpath with the given point.
+            ctx.moveTo(75, 75);
+            //Adds the given point to the current subpath, connected to the previous one by a straight line.
+            ctx.lineTo(125, 75);
+            ctx.lineTo(125, 125);
+            ctx.lineTo(75, 75);
+            //Fills the subpaths of the current path or the given path with the current fill style.
+            ctx.fill();
+        </script>
+    </body>
+</html>
