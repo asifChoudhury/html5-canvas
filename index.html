@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>My Canvas App</title>
+    </head>
+    <body>
+        <canvas id="c" width="200" height="200"></canvas>
+        <script>
+            var c = document.querySelector("#c");
+            var ctx = c.getContext("2d");
+
+            var image = new Image();
+
+            image.onload = function () {
+                console.log("Loaded image.");
+                ctx.drawImage(image, 0, 0, c.width, c.height);
+
+                var savedImage = c.toDataURL();
+                window.open(savedImage);
+            }
+
+            image.src = "fry.jpg";
+        </script>
+    </body>
+</html>
