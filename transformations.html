@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>My Canvas App</title>
+    </head>
+    <body>
+        <canvas id="c" width="200" height="200"></canvas>
+        <script>
+            var c = document.querySelector("#c");
+            var ctx = c.getContext('2d');
+            // Pushes the current state onto the stack.
+            ctx.save();
+            // change the fill style.
+            ctx.fillStyle = 'red';
+            // Changes the transformation matrix to apply a translation transformation with the given characteristics.
+            ctx.translate(10,10);
+            // Paints the given rectangle onto the canvas, using the current fill style.
+            ctx.fillRect(0,0,50,50);
+            // Pops the top state on the stack, restoring the context to that state.
+            ctx.restore();
+
+
+
+            // Changes the transformation matrix to apply a rotation transformation with the given characteristics. The angle is in radians.
+            ctx.rotate(Math.PI/4);
+
+            ctx.translate(150,0);
+            ctx.fillStyle = 'green';
+            ctx.fillRect(0,0, 50,50);
+        </script>
+    </body>
+</html>
